@@ -8,14 +8,14 @@ import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 
 
-const cors = require(cors)
-app.use(cors());
+const cors = require('cors')
+
 
 dotenv.config();
 connectDatabase();
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 
 // app.use(cors({
 //   origin: '*'
@@ -24,10 +24,10 @@ app.use(express.json());
 //   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 // }));
 // API
-app.use(cors("/api/import", ImportData));
-app.use(cors("/api/products", productRoute));
-app.use(cors("/api/users", userRouter));
-app.use(cors("/api/orders", orderRouter));
+app.use("/api/import", ImportData);
+app.use("/api/products", productRoute);
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
