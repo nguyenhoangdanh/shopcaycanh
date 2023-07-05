@@ -4,13 +4,12 @@
   "type": "module",
   "main": "server.js",
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "vercel-build": "node ./build.js",
-    "server": "nodemon ./server.js"
+    "vercel-build": "node ./build.js"
   },
   "author": "",
   "license": "ISC",
