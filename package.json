@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server.js",
-    "server": "nodemon ./server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
