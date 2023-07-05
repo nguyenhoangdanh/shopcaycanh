@@ -7,6 +7,7 @@ import { errorHandler, notFound } from "./Middleware/Errors.js";
 import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 
+
 dotenv.config();
 connectDatabase();
 const app = express();
@@ -20,6 +21,7 @@ app.use("/api/orders", orderRouter);
 app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
+
 
 // ERROR HANDLER
 app.use(notFound);
