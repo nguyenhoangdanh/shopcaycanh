@@ -8,21 +8,21 @@ import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 
 
-var cors = require('cors')
-
+const cors = require(cors)
+app.use(cors());
 
 dotenv.config();
 connectDatabase();
 const app = express();
 app.use(express.json());
-app.use(cors());
 
-app.use(cors({
-  origin: '*'
-}));
-app.use(cors({
-  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
+
+// app.use(cors({
+//   origin: '*'
+// }));
+// app.use(cors({
+//   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+// }));
 // API
 app.use(cors("/api/import", ImportData));
 app.use(cors("/api/products", productRoute));
