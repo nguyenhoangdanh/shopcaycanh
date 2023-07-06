@@ -8,9 +8,9 @@ import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 // import cors from "cors";
 
-const cors = require("cors")
-const express = require("express");
-const app = express();
+var cors = require("cors")
+var express = require("express");
+var app = express();
 app.use(cors());
 
 dotenv.config();
