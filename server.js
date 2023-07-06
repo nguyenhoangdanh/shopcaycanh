@@ -8,10 +8,10 @@ import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 // import cors from "cors";
 
-var cors = require("cors")
-var express = require("express");
+// var cors = require("cors")
+// var express = require("express");
 var app = express();
-app.use(cors());
+// app.use(cors());
 
 dotenv.config();
 connectDatabase();
