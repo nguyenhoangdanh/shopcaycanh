@@ -8,14 +8,13 @@ import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 
 
-const cors = require('cors')
 
 
 dotenv.config();
 connectDatabase();
 const app = express();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 // app.use(cors({
 //   origin: '*'
