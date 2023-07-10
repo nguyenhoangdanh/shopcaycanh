@@ -11,6 +11,7 @@ import cors from "cors";
 // var cors = require("cors")
 // var express = require("express");
 const app = express();
+const path = require('path');
 app.use(cors());
 
 dotenv.config();
@@ -18,13 +19,14 @@ connectDatabase();
 
 app.use(express.json());
 
-// app.use(cors({
-//   origin: '*'
-// }));
-// app.use(cors({
-//   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-// }));
-// API
+// 👇️ serving static files from build directory
+app.use(express.static(path.join(__dirname, 'build')));
+
+// 👇️ catch-all route
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
 app.use("/api/users", userRouter);
